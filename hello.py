@@ -8,6 +8,7 @@ from flask.ext.script import Manager
 
 app = Flask(__name__)
 
+bootstrap=Bootstrap(app)
 #路由器和视图函数
 @app.route("/")
 def index():
