@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+这是一个if的页面
+<hr>
+{% if user %}
+    <a href="#">{{ user.username }}</a>
+    <a href="#">注册</a>
+{% else %}
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+
+
+{% endif %}
+
+</body>
+</html>
