@@ -5,6 +5,14 @@ from  flask.ext.bootstrap import Bootstrap
 from flask.ext.script import Manager
 from flask.ext.moment import Moment
 from datetime import datetime
+from flask.ext.wtf import Form
+from wtforms import StringField,SubmitField
+from wtforms.validators import Required
+
+
+class NameForm(Form):
+    name=StringField('What is your name?',validators=[Required()])
+    submit=SubmitField('Submit')
 
 
 
@@ -31,8 +39,7 @@ def page_not_found(e):
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('500.html'), 500
-
+    return render_template('500.html'),500
 #添加时间
 @app.route('/')
 def index():
