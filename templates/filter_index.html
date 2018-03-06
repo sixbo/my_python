@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+</head>
+<body>
+<img src="{{ avatar|default("https://pic.cnblogs.com/face/789443/20150723215337.png") }}"alt="">
+<hr>
+<p>评论数：({{ comment|length }})</p>
+<ul>
+    {% for foo in comment %}
+        <li>
+            <a href="#">{{ foo.user}}</a>
+            <p>{{ foo.content }}</p>
+        </li>
+
+    {% endfor %}
+
+</ul>
+</body>
+</html>
